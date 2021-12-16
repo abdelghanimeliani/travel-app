@@ -55,12 +55,57 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.only(top: 15 , left: 40  , right: 25),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: const [
                     Text("Discover", style: TextStyle(fontWeight: FontWeight.bold , fontSize: 30),) ,
                     Text("New Destination", style: TextStyle(fontWeight: FontWeight.bold , fontSize: 30),) ,
                   ],
                 ),
-              )
+              ) ,
+                Padding(
+                  padding: const EdgeInsets.only(left: 30 , top: 22 , right: 40),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(0),
+                        child: Container(
+                          width: 260,
+                          height: 44,
+                          child: TextField(
+                            decoration: InputDecoration(
+                              filled: true,
+                              focusColor: CustomTheme.primaryColor,
+                              fillColor: Colors.white54,
+                              hoverColor:CustomTheme.primaryColor ,
+                              prefixIcon: Icon(Icons.search),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(25)
+                                ),
+                                labelText: 'Search Places',
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      Container(
+                        height: 48,
+                        width: 48,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle ,
+                          color: CustomTheme.primaryColor
+                        ),
+                        child: Icon(
+                          Icons.filter_list,
+                          size: 30,
+                          color: Colors.white,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+
+
+
                 
               
             ],
