@@ -123,19 +123,62 @@ class _HomePageState extends State<HomePage> {
 
 
                 Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.only(left: 20 , top: 20 , right: 20 ),
                   child: Container(
-                    height: 250,
+                    height: 230,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
                         Item(context,  "assets/detailsimage.jpg", "Nusa Penida" , 'Bali , Indenuia'),
-                        Item(context,  "assets/detailsimage.jpg", "Nusa Penida" , 'Bali , Indenuia'),
+                        Item(context,  "assets/tallimage2.jpg", "Plage Wkhlas" , 'Les Maldives'),
                         Item(context,  "assets/detailsimage.jpg", "Nusa Penida" , 'Bali , Indenuia'),
                       ],
                     ),
                   ),
-                )
+                ) ,
+
+
+                Padding(
+                  padding: const EdgeInsets.only(left: 20 , right: 20 , bottom: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Popular" ,
+                        style: TextStyle(
+                          fontSize: 20 ,
+                          fontWeight: FontWeight.bold ,
+                          color: Colors.black
+                        ),
+                      ),
+                      Text("All" ,
+                        style: TextStyle(
+                            fontSize: 20 ,
+                            fontWeight: FontWeight.bold ,
+                            color: Colors.black45
+                        ),
+                      )
+                    ],
+                  ),
+                ) ,
+
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Container(
+                    height: 300,
+                    width: 400,
+                    child: ListView(
+
+                      children: [
+                        Item2(context,  "assets/1.webp", "Nusa Penida" , 'Bali , Indenuia'),
+                        Item2(context,  "assets/2.webp", "Nusa Penida" , 'Bali , Indenuia'),
+                      ],
+                    ),
+                  ),
+                ) ,
+
+
+
 
               ],
             ),
@@ -150,30 +193,103 @@ class _HomePageState extends State<HomePage> {
 
 Widget Item(BuildContext context , String link , String place , String location){
 
-    return GestureDetector(
-      onTap: () {
+  return GestureDetector(
+    onTap: () {
 
-      },
-      child: Padding(
-        padding: const EdgeInsets.only(left: 12),
-        child: Container(
-          width: 150,
-          height: 220,
-          child: Stack(
-            children: [
-              Container(
-                width: 150,
-                height: 220,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                        image: AssetImage(
-                            (link)),
-                        fit: BoxFit.cover)),
+    },
+    child: Padding(
+      padding: const EdgeInsets.only(left: 12),
+      child: Container(
+        width: 150,
+        height: 210,
+        child: Stack(
+          children: [
+            Container(
+              width: 150,
+              height: 210,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                      image: AssetImage(
+                          (link)),
+                      fit: BoxFit.cover)),
+            ),
+            Container(
+              width: 150,
+              height: 210,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  gradient: LinearGradient(
+                      colors: [
+                        Colors.black.withOpacity(0.6),
+                        Colors.black.withOpacity(0),
+                      ],
+                      end: Alignment.topCenter,
+                      begin: Alignment.bottomCenter)),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15 , bottom: 5),
+                    child: Text(
+                      place,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15 , bottom: 20),
+                    child: Text(
+                      location,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w300),
+                    ),
+                  ),
+
+                ],
               ),
-              Container(
-                width: 150,
-                height: 220,
+            )
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+
+
+Widget Item2 (BuildContext context , String link , String place , String location){
+  return GestureDetector(
+    onTap: () {
+
+    },
+    child: Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: Container(
+        width: 350,
+        height: 130,
+        child: Stack(
+          children: [
+            Container(
+              width: 350,
+              height: 130,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                      image: AssetImage(
+                          (link)),
+                      fit: BoxFit.cover)),
+            ),
+            Center(
+              child: Container(
+                width: 350,
+                height: 130,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     gradient: LinearGradient(
@@ -181,40 +297,44 @@ Widget Item(BuildContext context , String link , String place , String location)
                           Colors.black.withOpacity(0.6),
                           Colors.black.withOpacity(0),
                         ],
-                        end: Alignment.topCenter,
-                        begin: Alignment.bottomCenter)),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15 , bottom: 5),
-                      child: Text(
-                        place,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
+                        end: Alignment.centerRight,
+                        begin: Alignment.centerLeft)),
+                child: Center(
+                  child: Column(
 
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15 , bottom: 20),
-                      child: Text(
-                        location,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w300),
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15 , bottom: 5),
+                        child: Text(
+                          place,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
-                    ),
 
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15 , bottom: 20),
+                        child: Text(
+                          location,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w300),
+                        ),
+                      ),
+
+                    ],
+                  ),
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
-    );
+    ),
+  );
 }
