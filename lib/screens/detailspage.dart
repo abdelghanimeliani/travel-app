@@ -129,22 +129,70 @@ class _DetailsPageState extends State<DetailsPage> {
       width: 20,
     ),
     Column(
-    children: [
+      crossAxisAlignment: CrossAxisAlignment.start,
+    children: const [
     Text("Nusa Penida", style: TextStyle(fontWeight: FontWeight.bold , fontSize: 25 , color: Colors.white),),
-    Text("Bali , Indenusia", style: TextStyle(fontWeight: FontWeight.w400 , fontSize: 20 , color: Colors.white),)
+    Text("Bali , Indenusia", style: TextStyle(fontWeight: FontWeight.w400 , fontSize: 18 , color: Colors.white),)
     ],
     )
     ],
     ),
                                   ),
-
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                                  child: const Divider(
+                                const Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 18.0),
+                                  child: Divider(
                                     color: Colors.white54,
                                     thickness: 2,
                                   ),
-                                )
+                                ) ,
+
+
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 25 , vertical: 5),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Icon(Icons.star , color: Colors.white,size: 30,) ,
+                                            Text('4.5' , style: TextStyle(fontSize: 18 , fontWeight: FontWeight.w500 , color: Colors.white),)
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Icon( IconData(0xf864,), color: Colors.white,size: 30,) ,
+                                            Text('22°C' , style: TextStyle(fontSize: 18 , fontWeight: FontWeight.w500 , color: Colors.white),)
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Icon( IconData(0xe122, fontFamily: 'MaterialIcons'), color: Colors.white,size: 30,) ,
+                                            Text('7 days' , style: TextStyle(fontSize: 18 , fontWeight: FontWeight.w500 , color: Colors.white),)
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ) , 
+                                  
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 20 , top: 5),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text("Descreption" , style: TextStyle(color: Colors.white , fontWeight: FontWeight.w600 , fontSize: 20),)
+                                        ,Text("hello ro berk hadi description dertha ghir bech ntesti en ui ida rah yekhdem w normalement sde9 yedkhem " , style: TextStyle(color: Colors.white , fontWeight: FontWeight.w400 , fontSize: 16),)
+                                      ],
+                                    ),
+                                  ),
+                                  
+                                  Padding(
+                                    padding: const EdgeInsets.all(22.0),
+                                    child: CupertinoButton(
+
+                                      color: Colors.white,
+                                      onPressed: () {  },
+                                      child: Text('Book Now' ,style: TextStyle(fontSize: 20 , color: CustomTheme.primaryColor , fontWeight: FontWeight.bold),),),
+                                  )
 
                                 ],
                                   )
