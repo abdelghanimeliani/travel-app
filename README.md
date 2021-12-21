@@ -5,5 +5,5 @@
 
 |home screen|details screen|
 |:------------:|:------------:|
-![home](assets/home.png)|![details](assets/detail.png)|
+![home](assets/home.png)|![details](assets/dertail.png)|
 
